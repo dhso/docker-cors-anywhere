@@ -40,7 +40,7 @@ var cors_proxy = require('cors-anywhere');
 cors_proxy.createServer({
   originBlacklist: originBlacklist,
   originWhitelist: originWhitelist,
-  requireHeader: ['origin', 'x-requested-with'],
+  requireHeader: parseEnvList(process.env.CORSANYWHERE_REQUIREHEADER),
   checkRateLimit: checkRateLimit,
   removeHeaders: [
     'cookie',
