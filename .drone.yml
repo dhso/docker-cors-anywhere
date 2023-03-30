@@ -13,7 +13,7 @@ steps:
     registry: registry.hub.docker.com
     repo: registry.hub.docker.com/dhso/cors-anywhere
     auto_tag: true
-    auto_tag_suffix: linux-amd64
-    username: DOCKER_USERNAME
+    username:
+      from_secret: DOCKER_USERNAME
     password:
       from_secret: DOCKER_PASSWORD
